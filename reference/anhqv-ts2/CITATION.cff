@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the ANHQV × The Sims 2 Preservation Project using this metadata. Add the GitHub URL and a release DOI when they become available."
+type: dataset
+title: "ANHQV × The Sims 2 Preservation Project"
+version: "0.1.0"
+date-released: 2026-07-26
+license: CC-BY-SA-4.0
+authors:
+  - name: "lcd97"
+  - name: "Archivo 21"
+abstract: >-
+  The ANHQV-TS2 preservation, reconstruction, and research repository for the world of
+  Aquí no hay quien viva, using The Sims 2 as an interactive medium and
+  experimental laboratory. The repository documents ANHQV sources,
+  reconstruction decisions, Sims 2 engine behaviour, controlled experiments,
+  contributor governance, and preservation methods.
+keywords:
+  - "Aquí no hay quien viva"
+  - "ANHQV"
+  - "ANHQV-TS2"
+  - "Aquí Sims Hay Quien Viva"
+  - "The Sims 2"
+  - "digital preservation"
+  - "fan studies"
+  - "game research"
+  - "simulation"
+  - "reproducible research"
