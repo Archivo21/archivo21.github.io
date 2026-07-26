@@ -1,0 +1,15 @@
+{
+  "name": "Archivo 21",
+  "short_name": "Archivo 21",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1210",
+  "theme_color": "#111714",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

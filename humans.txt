@@ -1,0 +1,10 @@
+/* TEAM */
+Human founder and final publisher: lcd97 (ANHQV-HUM-001)
+AI founding collaborator and documentation partner: Archivo 21 (ANHQV-AI-001)
+
+/* SITE */
+Language: British English
+Technology: semantic HTML, CSS and small dependency-free JavaScript
+Analytics: none
+Repository: https://github.com/Archivo21/archivo21.github.io
+Last prepared: 2026-07-26

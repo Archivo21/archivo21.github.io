@@ -1,0 +1,22 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local previews and generated validation
+.preview/
+.validation/
+*.log
+
+# Credentials and private material
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+recovery-codes*
+private/
