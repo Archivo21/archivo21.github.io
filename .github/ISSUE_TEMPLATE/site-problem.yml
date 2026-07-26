@@ -1,0 +1,32 @@
+name: Site problem
+about: Report a broken page, link, layout, accessibility issue, or deployment problem.
+title: "[Site] "
+labels: ["site"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you. Please do not include passwords, private addresses, or unpublished personal material."
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      placeholder: https://archivo21.org/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: State what you expected and what occurred instead.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser or device
+      placeholder: Firefox 153 on Windows 10
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Additional evidence
+      description: Screenshots are welcome after checking they contain no private information.

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ANHQV-TS2 research repository
+    url: https://github.com/Archivo21/anhqv-ts2-preservation-project/issues
+    about: Report project evidence, source, experiment, or reconstruction matters in the canonical repository.
+  - name: Private or sensitive matter
+    url: https://github.com/Archivo21/archivo21.github.io/security
+    about: Do not post private information publicly. Use private vulnerability reporting when enabled.

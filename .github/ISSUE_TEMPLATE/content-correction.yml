@@ -1,0 +1,30 @@
+name: Website content correction
+about: Correct inaccurate, unclear, stale, or insufficiently attributed website text.
+title: "[Correction] "
+labels: ["content", "correction"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      placeholder: /about/ or README.md
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current wording or claim
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Distinguish evidence, inference, memory, and preference.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source or reasoning
+      description: Give the most precise public source available, or explain why the change is editorial.
