@@ -6,11 +6,12 @@
 ## Automated checks
 
 - HTML pages: 13
-- Candidate files: 66
+- Candidate files: 67
 - Internal file targets: resolved
 - Required repository files: present
 - Conventional institutional headers: 12
 - Headers using the transparent provisional emblem: 12
+- Headers using the angular emblem housing and ochre navigation rail: 12
 - Legacy CSS `A21` header marks: 0
 - Opaque source-master dimensions: 1254 × 1254 pixels
 - Opaque source-master SHA-256 remains
@@ -28,6 +29,8 @@
 - Sitemap XML: parsed
 - JavaScript syntax checks: PASS
 - CSS delimiters, strings and comments: balanced
+- Desktop header rail/nav breakpoint: above 850 CSS pixels
+- Collapsible mobile header/nav breakpoint: 850 CSS pixels and below
 - HTML parser check: PASS
 - Duplicate HTML IDs: 0
 - Images without an `alt` attribute: 0
@@ -55,6 +58,11 @@
   height.
 - The mobile navigation/header offset continues to use the shared responsive
   header height.
+- The desktop rail reserves a 158 × 142 CSS-pixel angular emblem housing and
+  aligns the navigation above a four-pixel ochre structural line.
+- The mobile rail compresses to a 112 × 104 CSS-pixel housing, retains the
+  86-pixel emblem and anchors the expandable menu below the shared 104-pixel
+  header height.
 - Portrait `/www/` keeps its independent tall composition and remains
   unaffected by the institutional homepage redesign.
 
@@ -70,6 +78,11 @@
 - The homepage is now composed around the emblem: institutional declaration,
   status ledger, current-project file, method card and three linked collection
   routes.
+- Site-wide header wording, destinations and active-page semantics are
+  unchanged; the new rail is a visual treatment of the existing navigation.
+- `docs/CHANGE-DOCUMENTATION-POLICY.md` records the decorative-only and full
+  documentation tiers. Both retain a recoverable pre-change checkpoint for at
+  least 28 days.
 - The site uses no external fonts, analytics, trackers, package manager or
   runtime framework.
 - Contact aliases remain hidden while `contactRoutingActive` is `false`.

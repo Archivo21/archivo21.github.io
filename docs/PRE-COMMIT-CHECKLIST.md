@@ -1,5 +1,13 @@
 # Pre-commit Checklist
 
+## Change record
+
+- [ ] Classify the change under
+      [`CHANGE-DOCUMENTATION-POLICY.md`](CHANGE-DOCUMENTATION-POLICY.md).
+- [ ] Record the exact pre-change ref and retain a recoverable checkpoint for
+      at least 28 days.
+- [ ] If any part is not decorative-only, use the full record.
+
 ## Repository identity
 
 - [ ] Repository name is exactly `archivo21.github.io`.

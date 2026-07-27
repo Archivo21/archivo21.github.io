@@ -40,6 +40,10 @@ This site has no build step and no external runtime dependencies.
 The included `CNAME` file contains `archivo21.org`. Remove it before the first commit if the custom domain is not ready.
 
 See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the complete checklist.
+Change records use the decorative-only or full tier defined in
+[`docs/CHANGE-DOCUMENTATION-POLICY.md`](docs/CHANGE-DOCUMENTATION-POLICY.md);
+both tiers require a recoverable pre-change checkpoint retained for at least
+28 days.
 
 The `www` Easter egg requires one Cloudflare hostname redirect after the files
 are live. See [`docs/WWW-EASTER-EGG.md`](docs/WWW-EASTER-EGG.md).

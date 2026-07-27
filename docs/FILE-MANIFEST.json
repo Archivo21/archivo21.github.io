@@ -70,8 +70,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3064,
-      "sha256": "6a0c1c74690e1aa098a85098af068e9b32d1bd799556f38f8a8c1b7b51cef392"
+      "bytes": 3291,
+      "sha256": "c8ee3cf0ab94d829be6faca798cc2b7ba6aa253ac99e380b03ee0e0b41e10923"
     },
     {
       "path": "SECURITY.md",
@@ -95,8 +95,8 @@
     },
     {
       "path": "assets/css/site.css",
-      "bytes": 17254,
-      "sha256": "4ad466647d992a484d346319fd10c66e805c72a0d3ab2f577ec3a7d4cf77d9de"
+      "bytes": 19869,
+      "sha256": "e144655717a0e22ceb7f04417e5f0a23db396a5510510b3f449f0f0b34c6a709"
     },
     {
       "path": "assets/icons/favicon.svg",
@@ -164,6 +164,11 @@
       "sha256": "cfbcbd7fd4de4cd6ff4028dc34591d9e75d22c93858ea6b33663a7f35ce0d63f"
     },
     {
+      "path": "docs/CHANGE-DOCUMENTATION-POLICY.md",
+      "bytes": 1877,
+      "sha256": "c4af4259dedd852dd69f51e7595b8987810ce315fe66bfc2de0c03021c4eea05"
+    },
+    {
       "path": "docs/DEPLOYMENT.md",
       "bytes": 3233,
       "sha256": "ebd7dda4f4b96e3f1d35751a921b1bc204f0e20c6c77eed11a966d1ba3bc4896"
@@ -175,18 +180,18 @@
     },
     {
       "path": "docs/PRE-COMMIT-CHECKLIST.md",
-      "bytes": 1766,
-      "sha256": "a0e9397e7ae969525d5e6a2d3d03aed330277a4b5249ddc8d4ca0926b0a0b2c0"
+      "bytes": 2056,
+      "sha256": "6db8555fdf3609180978d4a60e3ec749b49615a05c5f24655b4d64bf3661f810"
     },
     {
       "path": "docs/REPOSITORY-TREE.txt",
-      "bytes": 1559,
-      "sha256": "6ab3644ccd2d0d8c7f6e732626fd2847715db3363f72028c4fad956202e51853"
+      "bytes": 1594,
+      "sha256": "0f043640fd1a2817f379703c0e016744c64c94f377749fdd98850153fdc1ad9d"
     },
     {
       "path": "docs/VALIDATION-REPORT.md",
-      "bytes": 3977,
-      "sha256": "38baf98210d89738c4b4c52be2b2bfbc9f7298f36353c289c098b7f26b23077d"
+      "bytes": 4811,
+      "sha256": "d398ef33fbd49b64feb2599f92cbd18fd9cc26ba4f58e0a89998640e92266174"
     },
     {
       "path": "docs/WWW-EASTER-EGG.md",

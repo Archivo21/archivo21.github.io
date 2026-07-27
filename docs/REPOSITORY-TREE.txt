@@ -42,6 +42,7 @@
   contribute/
     index.html
   docs/
+    CHANGE-DOCUMENTATION-POLICY.md
     DEPLOYMENT.md
     FILE-MANIFEST.json
     MIGRATION-MAP.md
