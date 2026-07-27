@@ -31,6 +31,8 @@
       archie-www-easter-egg.png
       archie-www-wave.png
       archivo21-provisional-header-logo.jpg
+      archivo21-provisional-logo-transparent-header.png
+      archivo21-provisional-logo-transparent.png
     js/
       config.js
       easter-egg.js
