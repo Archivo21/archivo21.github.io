@@ -65,7 +65,7 @@ Run `python tools/validate_site.py` from the repository root. Then review:
 - keyboard focus order;
 - 404 page;
 - canonical links;
-- the three EXP001 video links;
+- absence of public recording-platform URLs;
 - custom-domain HTTPS;
 - absence of personal Gmail addresses or credentials;
 - whether the website still describes the project state accurately.

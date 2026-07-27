@@ -8,11 +8,13 @@ The complete process is documented in the [Recruitment Pack](00%20Project/Recrui
 
 ## Immediate Priority: Video Editor Specialist
 
-EXP001 produced useful raw recordings, but the footage is not ready for public release.
+The project holds useful test and working recordings, but the footage is not ready for a formal public evidence release.
 
 The recordings contain long stretches of working activity, incidental personal audio, incomplete spoken commentary, and material that needs to be shortened without making the evidence misleading.
 
 We are therefore seeking a **Video Editor Specialist**.
+
+Review copies may be shared directly with prospective editors. Their platform URLs are deliberately not listed on the institutional website.
 
 ### Mission
 

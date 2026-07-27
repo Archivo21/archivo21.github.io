@@ -13,8 +13,9 @@
 - [ ] `ANHQV-HUM-001` refers to lcd97.
 - [ ] `ANHQV-AI-001` refers to Archivo 21.
 - [ ] ANHQV-TS2 status and release language match the canonical repository.
+- [ ] EXP000 is labelled concluded and its retrospective documentation limits remain explicit.
 - [ ] EXP001 is still labelled ongoing unless a reviewed conclusion now exists.
-- [ ] The three public viewing links are correct.
+- [ ] No recording-platform URLs are showcased publicly.
 - [ ] Any newer local files have replaced stale migration snapshots.
 
 ## Privacy and rights

@@ -2,7 +2,7 @@
 
 **Status:** Ongoing  
 **Public documentation status:** Draft  
-**Media status:** Three clean public YouTube recordings available; additional raw media preserved locally and withheld pending editing and review
+**Media status:** No public viewing copies are currently catalogued for EXP001; candidate footage awaits file-level reconciliation
 
 ## Objective
 
@@ -10,9 +10,11 @@ Determine whether two-click foundations can be created and extended entirely wit
 
 ## Current State
 
-The experiment produced useful observations and several recordings. Three clean viewing copies are public, but the full evidence set has not yet been reconciled or reduced to a final documented demonstration.
+The experiment produced useful observations, but the evidence set has not yet been reconciled or reduced to a final documented demonstration.
 
-Some additional local recordings contain working material, incidental audio, and incomplete commentary. They must be edited non-destructively before publication, with the untouched originals retained and an edit log supplied.
+The short built-in-recorder tests previously grouped with this experiment are now classified as EXP000. They assess the recording method and must not be used to imply a conclusion for EXP001.
+
+Any local footage that genuinely documents the foundation procedure must be mapped separately before publication. Working material, incidental audio and incomplete commentary must be edited non-destructively, with the untouched originals retained and an edit log supplied.
 
 No final conclusion should be inferred from this draft record.
 
@@ -34,9 +36,8 @@ See the related research-journal question record.
 
 ## Media
 
-See:
+The canonical repository must be reviewed before relying on its older media mapping:
 
-- [EXP001 video evidence and public viewing links](../../08%20Assets/Videos/EXP001%20-%20Two%20Click%20Foundations/README.md)
 - [`08 Assets/Videos/README.md`](../../08%20Assets/Videos/README.md)
 - [`08 Assets/Videos/Inventory.md`](../../08%20Assets/Videos/Inventory.md)
 

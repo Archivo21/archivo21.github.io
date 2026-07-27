@@ -12,6 +12,7 @@ The website is an institutional front door. The ANHQV-TS2 repository remains the
 | `CONTRIBUTING.md` | Contribution principles and reference snapshot | ANHQV-TS2 root |
 | `NOTICE.md` and `LICENSE` | `/rights/`, root site notice, and reference snapshot | ANHQV-TS2 root |
 | `CITATION.cff` | Reference snapshot only | ANHQV-TS2 root |
+| Retrospective in-game recording notes | `/research/exp000/` | Canonical EXP000 record not yet created |
 | EXP001 `README.md` and `Notes.md` | `/research/exp001/` and reference snapshot | `02 Field Reports/EXP001 - Two Click Foundations/` |
 | `Attribution.md` | `/provenance/` and full local reference copy | Intended `00 Project/Attribution.md` |
 | Archivo 21 contributor archive | `/about/`, `/provenance/`, and full local reference copy | `Archive/Contributor Archives/archivo-21.md` |

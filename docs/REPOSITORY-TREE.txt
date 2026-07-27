@@ -64,6 +64,8 @@
   reference/archivo21/README.md
   reference/archivo21/archivo-21.md
   research/
+  research/exp000/
+  research/exp000/index.html
   research/exp001/
   research/exp001/index.html
   research/index.html

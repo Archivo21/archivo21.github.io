@@ -120,33 +120,33 @@
     },
     {
       "path": "contribute/index.html",
-      "bytes": 4313,
-      "sha256": "59bae224e7a391162a82656d2cd93f303b3f0cd5f6978f324bb384eaf9214c1d"
+      "bytes": 4442,
+      "sha256": "770fbcd3084edf1113f1f746c6a7c93ec2f1c7a9a323079dcee438bd4c1ccd2e"
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 2872,
-      "sha256": "3c4d65be398061f448ae0f2898a71e94d59e9817587711bbcdb6ba39a09f9208"
+      "bytes": 2885,
+      "sha256": "7e6ab1e10e6e94f91835225b26dd27bd5a64404eda4a1bd88a21a90e73d8d70e"
     },
     {
       "path": "docs/MIGRATION-MAP.md",
-      "bytes": 1991,
-      "sha256": "abe6b772b47c162a246a98cba1171ea03b752a741e4b970d531614cb2c105ce0"
+      "bytes": 2097,
+      "sha256": "aac7c048ae33c44412476adb06d29eadaaf7be974b8443ae5a702e64726f64be"
     },
     {
       "path": "docs/PRE-COMMIT-CHECKLIST.md",
-      "bytes": 1394,
-      "sha256": "b2a88a89373e10020419134ab209ab8401bdbb0b7caec634f048dad5ba6fddf3"
+      "bytes": 1496,
+      "sha256": "f86180485f8ddca368b0ff7c40e296ad221cda6b6e1a06b258e2876039b9350f"
     },
     {
       "path": "docs/REPOSITORY-TREE.txt",
-      "bytes": 1661,
-      "sha256": "00a316e4561b09e6296b729f9102860b1775e59c945590aa2ca6d09e48bd104d"
+      "bytes": 1709,
+      "sha256": "a69aadf5c75ee3abe51fb24041ad15cfb757eed6fb306f6108384967ad5b818b"
     },
     {
       "path": "docs/VALIDATION-REPORT.md",
-      "bytes": 1051,
-      "sha256": "30e12a8644f7da9c779a1d058c33a766de49dad75cfff748109e2abeb7040f4b"
+      "bytes": 1100,
+      "sha256": "705c6f5a572a2962d80b287c792b8c94abf0469a8645813b0d9e5393a74a58a4"
     },
     {
       "path": "humans.txt",
@@ -160,8 +160,8 @@
     },
     {
       "path": "projects/anhqv-ts2/index.html",
-      "bytes": 5376,
-      "sha256": "75693bc2b30919575451bd3aabcad0d4ecbb15b17aa9f1e55bb81205ed9ee476"
+      "bytes": 5346,
+      "sha256": "a8d76683db0037bd8cca4863d59608b54b6e94122c29db04ab563265a7654806"
     },
     {
       "path": "projects/index.html",
@@ -190,8 +190,8 @@
     },
     {
       "path": "reference/anhqv-ts2/EXP001-README.md",
-      "bytes": 1653,
-      "sha256": "d177db690b28202be5d3de7cd0fc552d3046e101a51fec7ebf5ed3b1871febd7"
+      "bytes": 1765,
+      "sha256": "15cc5fa538a149c1035619bcab48c8b96b584cf2494949fa9bf3a6350f4732ab"
     },
     {
       "path": "reference/anhqv-ts2/LICENSE",
@@ -205,18 +205,18 @@
     },
     {
       "path": "reference/anhqv-ts2/README-SNAPSHOT.md",
-      "bytes": 314,
-      "sha256": "10c525cf78886d62cb8565e600520e7e7ab7d75bb3df6ae9fbfe247f68ca7749"
+      "bytes": 812,
+      "sha256": "13d41b40d3de8a0df48e5b43e0e91bd6fe771863617bb8e137f4c9b6e557852b"
     },
     {
       "path": "reference/anhqv-ts2/README.md",
-      "bytes": 8661,
-      "sha256": "be36d241e3c9ec8f5fc828d7b89ebd86800161d6e9e5ae5d47e89413d3ef2c37"
+      "bytes": 8554,
+      "sha256": "523520150807fd19d54b31ab9d47cdf0ca55f18b5d7c0751e4fee0ad0a312a00"
     },
     {
       "path": "reference/anhqv-ts2/RECRUITMENT.md",
-      "bytes": 3947,
-      "sha256": "5ae00aab86f2adc31f3c2a48b9593c891cf98787238f271430a8f71a5f3e9613"
+      "bytes": 4122,
+      "sha256": "f8ee61b13b16476086474a6e826855e786fb65acd8db19e8930bb06928c9f0d0"
     },
     {
       "path": "reference/archivo21/Attribution.md",
@@ -234,14 +234,19 @@
       "sha256": "79f81d98e0f8963dc7b6d0922ebd56e06e5b079ceffa5c8ec2b44916ff790e4a"
     },
     {
+      "path": "research/exp000/index.html",
+      "bytes": 5421,
+      "sha256": "56f5bba39cc5f0008b26ca74034ef5e824c2e5b3f34b42ff87f7bfb42e3121ed"
+    },
+    {
       "path": "research/exp001/index.html",
-      "bytes": 4447,
-      "sha256": "6e3f8da72c6e7fd609f6dcef692a002a9a05acac745f4fec108031c90c6f0921"
+      "bytes": 4360,
+      "sha256": "b5e3841e5b9542243d37ee0ad141f0d732001445aeb93eee27a60bee5577c08b"
     },
     {
       "path": "research/index.html",
-      "bytes": 3032,
-      "sha256": "8d5abab1b684551a0472ab02b20a674346191f2025015af513006bdbdb82f757"
+      "bytes": 3514,
+      "sha256": "b30fdb31e44f7f1d366a7944660741ed7be49bd0f6de652eac34090e1fc1f262"
     },
     {
       "path": "rights/index.html",
@@ -260,8 +265,8 @@
     },
     {
       "path": "sitemap.xml",
-      "bytes": 676,
-      "sha256": "094812148c2335e8c5c866d8a1c6a88f9dc5856d60aa7ebfd93f7e4fd9806305"
+      "bytes": 739,
+      "sha256": "fdd4b487475e3af2b7f8eb18e8a2a4ba1f1e5881b9f6802cc44a56cdd47aea20"
     },
     {
       "path": "tools/validate_site.py",
