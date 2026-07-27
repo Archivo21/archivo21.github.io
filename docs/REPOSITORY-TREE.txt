@@ -30,6 +30,7 @@
       README.md
       archie-www-easter-egg.png
       archie-www-wave.png
+      archivo21-provisional-header-logo.jpg
     js/
       config.js
       easter-egg.js

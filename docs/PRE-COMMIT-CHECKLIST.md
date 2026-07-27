@@ -35,4 +35,5 @@
 - [ ] HTTPS works before advertising the domain.
 - [ ] The `www` Cloudflare redirect opens `/www/` without replacing the apex homepage.
 - [ ] All fourteen Easter-egg objects remain keyboard-operable links.
+- [ ] All fourteen Easter-egg objects remain fully tappable in the portrait-phone composition.
 - [ ] `python tools/validate_site.py` passes.

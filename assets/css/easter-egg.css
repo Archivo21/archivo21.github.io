@@ -235,25 +235,42 @@ h1 {
 
 @media (max-width: 700px) {
   .page-shell { padding-inline: .45rem; }
-  .chaos-stage { min-height: 610px; aspect-ratio: auto; }
-  .archie { width: min(54vw, 265px); top: 50%; }
-  .retro-link { --size: 64px; }
-  .item-01 { left: 5%; top: 2%; }
-  .item-02 { right: 4%; top: 4%; }
-  .item-03 { left: 1%; top: 22%; }
-  .item-04 { left: 20%; top: 18%; }
-  .item-05 { left: 13%; top: 40%; }
-  .item-06 { left: 0; top: 54%; }
-  .item-07 { left: 17%; top: 69%; }
-  .item-08 { left: 31%; top: 80%; }
-  .item-09 { left: 2%; bottom: 1%; }
-  .item-10 { right: 2%; bottom: 1%; }
-  .item-11 { right: 21%; top: 78%; }
-  .item-12 { right: 19%; top: 61%; }
-  .item-13 { right: 0; top: 46%; }
-  .item-14 { right: 4%; top: 23%; }
   .controls { grid-template-columns: 1fr; justify-items: center; margin-top: .4rem; }
   .respectable-link { text-align: center; }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+  .page-shell { width: 100%; padding-top: .65rem; }
+  h1 { max-width: 12ch; font-size: clamp(2rem, 12vw, 3.4rem); line-height: .92; }
+  .instructions { max-width: 34ch; margin: .45rem auto .2rem; padding-inline: .35rem; }
+  .chaos-stage {
+    min-height: 0;
+    height: clamp(720px, 190vw, 850px);
+    aspect-ratio: auto;
+  }
+  .archie {
+    top: 48%;
+    width: min(57vw, 240px);
+    max-height: 38%;
+  }
+  .retro-link { min-width: 48px; min-height: 48px; }
+  .item-01 { --size: clamp(54px, 17vw, 70px); left: 3%; top: 1%; }
+  .item-02 { --size: clamp(58px, 18vw, 74px); right: 2%; top: 3%; }
+  .item-03 { --size: clamp(54px, 17vw, 70px); left: 22%; top: 12%; }
+  .item-04 { --size: clamp(52px, 16vw, 66px); right: 20%; top: 15%; }
+  .item-05 { --size: clamp(62px, 20vw, 82px); left: 1%; top: 25%; }
+  .item-06 { --size: clamp(66px, 21vw, 86px); right: 0; top: 29%; }
+  .item-07 { --size: clamp(50px, 16vw, 64px); left: 4%; top: 43%; }
+  .item-08 { --size: clamp(60px, 19vw, 78px); right: 2%; top: 46%; }
+  .item-09 { --size: clamp(54px, 17vw, 70px); left: 0; top: 59%; bottom: auto; }
+  .item-10 { --size: clamp(50px, 16vw, 64px); right: 3%; top: 63%; bottom: auto; }
+  .item-11 { --size: clamp(64px, 20vw, 82px); left: 18%; top: 71%; right: auto; }
+  .item-12 { --size: clamp(54px, 17vw, 70px); right: 18%; top: 75%; }
+  .item-13 { --size: clamp(62px, 19vw, 80px); left: 2%; right: auto; top: auto; bottom: 1%; }
+  .item-14 { --size: clamp(54px, 17vw, 70px); right: 2%; top: auto; bottom: 0; }
+  .controls { gap: .55rem; padding-bottom: .5rem; }
+  #noise-toggle { min-height: 44px; padding-inline: .85rem; }
+  .link-readout { min-height: 2.4em; padding-inline: .5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

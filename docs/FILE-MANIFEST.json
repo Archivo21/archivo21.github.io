@@ -45,8 +45,8 @@
     },
     {
       "path": "404.html",
-      "bytes": 2711,
-      "sha256": "dc503b64f9ca275e2fe84417003ca0812b1a75ad3b052f7c9fc6a402f9462319"
+      "bytes": 2761,
+      "sha256": "48c782133086ee00c2078f4aa476f2d463bef31f2b295685568bfa256dd14b6a"
     },
     {
       "path": "CNAME",
@@ -65,8 +65,8 @@
     },
     {
       "path": "NOTICE.md",
-      "bytes": 2078,
-      "sha256": "e30bd3cca9b52b39bb4d01dac514907dad520835f8b4d708a4eac8274767da6a"
+      "bytes": 2405,
+      "sha256": "1ffe14c759d652dfd7ce6aebf3dd568a4f92bc6c17679b8ad1c133928561471d"
     },
     {
       "path": "README.md",
@@ -80,8 +80,8 @@
     },
     {
       "path": "about/index.html",
-      "bytes": 4581,
-      "sha256": "d54d95671b0413d823cb58cf05f0cacf166cdaecd580621482273600303e932b"
+      "bytes": 4631,
+      "sha256": "dafa4ba91e6aa70ed55d3e6fee907e404b8c86a5e3c5cfa14fc8b6a595e7b13b"
     },
     {
       "path": "apple-touch-icon.png",
@@ -90,13 +90,13 @@
     },
     {
       "path": "assets/css/easter-egg.css",
-      "bytes": 6783,
-      "sha256": "2bdf0a349d0a344a80151090015b533fcb64ef055c0e923140b0a7c2f9187faf"
+      "bytes": 7874,
+      "sha256": "4006f714a3e0f2f9cd73d9bc8858eca0e17ce6b1bf9eba3fb89ff27ec226c1dd"
     },
     {
       "path": "assets/css/site.css",
-      "bytes": 9438,
-      "sha256": "ad2bc9d45b5ff329ee15588581a51abcbc52e262c6aee39807154c0f304c8aee"
+      "bytes": 9293,
+      "sha256": "15dbc6f9d53a74d1b6cba55a9e121529fe64e7ed78bb4d64fdf3b048d5deaf86"
     },
     {
       "path": "assets/icons/favicon.svg",
@@ -110,8 +110,8 @@
     },
     {
       "path": "assets/images/README.md",
-      "bytes": 1219,
-      "sha256": "3605c1023578d231a8cc19b0eabb5b46fb4c74a1744cb49efc00ff7627f974e6"
+      "bytes": 2119,
+      "sha256": "9de5fdc9a1b5d0a942bfca8914fa12c3b65d30ebc4ae1f9da996c7a446fac276"
     },
     {
       "path": "assets/images/archie-www-easter-egg.png",
@@ -122,6 +122,11 @@
       "path": "assets/images/archie-www-wave.png",
       "bytes": 767667,
       "sha256": "7f5d153b8e79ddb8f7e48db0b2298fa53fd76e06d20d4bf456dd5d4eb68c73cb"
+    },
+    {
+      "path": "assets/images/archivo21-provisional-header-logo.jpg",
+      "bytes": 645294,
+      "sha256": "62bad7f03f1f9b522e08ee4f1a113c4652428c8be0dae24dbf57d2f14be2c06f"
     },
     {
       "path": "assets/js/config.js",
@@ -140,13 +145,13 @@
     },
     {
       "path": "contact/index.html",
-      "bytes": 3256,
-      "sha256": "f20dacb99d717efe877ff44830cb4355c8ddeb0bfec46fb2b41b5a3a4b9b8de3"
+      "bytes": 3306,
+      "sha256": "c91b6e5e71e1c146a45d5fa511c6554bd5d7421f3a538bc2d2357afda37f736a"
     },
     {
       "path": "contribute/index.html",
-      "bytes": 4555,
-      "sha256": "bd7e326674dea7fa37ad6de723ce71c52cbdc76f382c9198dac18d7d7bc8d440"
+      "bytes": 4605,
+      "sha256": "871e445ee26c7255c4cd5da50a78714d2565f51d844ccb5a09337de874e275de"
     },
     {
       "path": "docs/DEPLOYMENT.md",
@@ -160,23 +165,23 @@
     },
     {
       "path": "docs/PRE-COMMIT-CHECKLIST.md",
-      "bytes": 1671,
-      "sha256": "25fa42ef1c4c1bc41192341e0f12f9d74b680f8ac552d9debe52a5de5e132a36"
+      "bytes": 1766,
+      "sha256": "a0e9397e7ae969525d5e6a2d3d03aed330277a4b5249ddc8d4ca0926b0a0b2c0"
     },
     {
       "path": "docs/REPOSITORY-TREE.txt",
-      "bytes": 1410,
-      "sha256": "d193639e8d32c049f944c6957d56e98bb9028911784078a929b880433b21ad6b"
+      "bytes": 1454,
+      "sha256": "f39f1fae484616613db72a466cc9218c7b5bbbb8fca1bb586a7a1cf72e0e91b6"
     },
     {
       "path": "docs/VALIDATION-REPORT.md",
-      "bytes": 1683,
-      "sha256": "689c8f30aedaa63fc8b4ae3a7a5e959c7a64050993ec552e9521adb5c9bfbe6a"
+      "bytes": 2292,
+      "sha256": "2ec7bcf82eb76afe31f725512eebad3904081a2cffd8c46e98f82487b2fb43f7"
     },
     {
       "path": "docs/WWW-EASTER-EGG.md",
-      "bytes": 2120,
-      "sha256": "10f22cb1313c2b9186eb39a60fd34fabed4c81e45d67802f4b93e16684227d3a"
+      "bytes": 2902,
+      "sha256": "a50496270afb2e33f5f533cdf2e450d8b08a183f49ccb17e41f8a33e715e5bb8"
     },
     {
       "path": "favicon.ico",
@@ -190,23 +195,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 5076,
-      "sha256": "5b1069a58fcd1594eb17aa02d4587cc2833a964fb8de4efc656a50e0a90d5727"
+      "bytes": 5126,
+      "sha256": "a2c7ccbd483bba5ed26c305ad5c676e99b1dff97115b30bdf2a1967ad1471a02"
     },
     {
       "path": "projects/anhqv-ts2/index.html",
-      "bytes": 5459,
-      "sha256": "1cefd51589c012df55c32f2cb241df9cef5d6a74f61472b6bb7adec694c4e128"
+      "bytes": 5509,
+      "sha256": "2038634ca6ba7df6a997c31c22885c2ebe1e5758b3b5f023d922d45d396e36f3"
     },
     {
       "path": "projects/index.html",
-      "bytes": 3317,
-      "sha256": "b57f85a20fcdb303a12d72f405bfda6d6d45bbe34f00eb787a12b67d614a21eb"
+      "bytes": 3367,
+      "sha256": "113030d480af4451fc39fbc19fc1d984cf9ff7e167295ba0108c4e7f6855fbf9"
     },
     {
       "path": "provenance/index.html",
-      "bytes": 4534,
-      "sha256": "c71c3d7a5dc78685c22d667d6dc1b72d405638c37ca9ccf11d6fdfec09c7e57c"
+      "bytes": 4584,
+      "sha256": "4dbad14219937fc388dc94383c2d921f45de3d02d148663b740ead37f465c5e7"
     },
     {
       "path": "reference/anhqv-ts2/CITATION.cff",
@@ -270,23 +275,23 @@
     },
     {
       "path": "research/exp000/index.html",
-      "bytes": 6703,
-      "sha256": "c9a4f50f520988f2104e89c6899972a070765b46c6d7c11651e2af9faef09063"
+      "bytes": 6784,
+      "sha256": "df0c1e1b89a9e8da3ab58168b6572f6ce3401be547a889bcc3ae967b9ff4d2e7"
     },
     {
       "path": "research/exp001/index.html",
-      "bytes": 4473,
-      "sha256": "8651d5195f3e69b19ef0a86613ff18efa60bc19b9d5b5132871e75e533191309"
+      "bytes": 4523,
+      "sha256": "bd9502cd42f2fa1a37b4a162f8abf348132318ee860dbae17b07d9b81f216f86"
     },
     {
       "path": "research/index.html",
-      "bytes": 3627,
-      "sha256": "1e817e35a504bd5e2a8761e1e97be4f9ed77935786bfd1682f2582eec59f556a"
+      "bytes": 3677,
+      "sha256": "29d383c753b466d409dc402541b87910a155837b142cfb2f1d3ac298b1ce4fde"
     },
     {
       "path": "rights/index.html",
-      "bytes": 4420,
-      "sha256": "f0c19acdbd99b9b5b19868eebd604294e2f27735ce496b3d655afd226366b2df"
+      "bytes": 4470,
+      "sha256": "270a0eff6781a3b614200f070a679d9386cf9646990ead153200c7173fa3258b"
     },
     {
       "path": "robots.txt",

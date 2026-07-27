@@ -1,6 +1,29 @@
 # Image assets
 
-The institutional pages deliberately use no third-party television or game imagery.
+Image-specific provenance and rights limits are recorded below. Inclusion in
+this directory does not imply that Archivo 21 owns or relicenses third-party
+marks, screenshots, characters or source material visible inside a composite.
+
+## Official provisional header logo
+
+`archivo21-provisional-header-logo.jpg` is the user-supplied official
+provisional Archivo 21 logo used in the twelve conventional institutional
+headers from 2026-07-27.
+
+- role: project branding, not research evidence;
+- dimensions: 1254 × 1254 pixels;
+- presentation: linked to the homepage and given the accessible link name
+  `Archivo 21 home`;
+- status: provisional and preserved as supplied, without overwriting the
+  favicon artwork or any earlier branding record;
+- rights: Archivo 21 claims no ownership of third-party game imagery, names,
+  logos or trade marks visible in the composite.
+
+The exact deployed file has SHA-256:
+
+```text
+62bad7f03f1f9b522e08ee4f1a113c4652428c8be0dae24dbf57d2f14be2c06f
+```
 
 ## Archie `www` assets
 

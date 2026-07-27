@@ -47,6 +47,21 @@ caching the destination during testing.
 3. Confirm the sound remains off until **TURN THE NOISE ON** is pressed.
 4. Keyboard-tab through all fourteen linked objects and confirm each receives a
    visible dotted focus outline.
+5. Open `/www/` on a portrait phone: Archie should remain central, all fourteen
+   objects should remain fully tappable inside the tall stage, and the noise
+   control should be reachable without rotating the device.
+
+## Smartphone layout
+
+Portrait displays up to 700 CSS pixels wide use a separate tall composition
+rather than squeezing the desktop scatter horizontally. The same fourteen
+links retain deliberately mismatched sizes and animation styles, but are
+distributed through seven staggered rows around Archie. Every link keeps a
+minimum 48 × 48 CSS-pixel tap target; the noise control keeps a minimum
+44-pixel height.
+
+Landscape phones and larger displays retain the original wide composition.
+Reduced-motion preferences continue to disable the movement in either layout.
 
 ## References
 
