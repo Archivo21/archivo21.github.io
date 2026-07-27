@@ -12,6 +12,12 @@ This licence does not apply to rights Archivo 21 does not own. Material copied i
 
 In particular, this repository does not claim rights in *Aquí no hay quien viva*, *The Sims 2*, their characters, footage, software, game assets, music, logos, trade marks, or other third-party material.
 
+The hidden `/www/` page is a period-web homage built with original Archivo 21
+character artwork, original linked-object graphics and browser-generated sound.
+It does not include copied television frames, characters, audio or GIF assets.
+Asset-specific provenance is recorded in
+[`assets/images/README.md`](assets/images/README.md).
+
 ## Independent project status
 
 Archivo 21 and ANHQV-TS2 are independent, non-official fan preservation and research projects. No affiliation, sponsorship, approval, or endorsement is claimed from relevant rights holders.

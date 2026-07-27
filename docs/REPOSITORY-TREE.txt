@@ -1,12 +1,12 @@
 ./
   .gitattributes
   .github/
-  .github/CODEOWNERS
-  .github/ISSUE_TEMPLATE/
-  .github/ISSUE_TEMPLATE/config.yml
-  .github/ISSUE_TEMPLATE/content-correction.yml
-  .github/ISSUE_TEMPLATE/site-problem.yml
-  .github/pull_request_template.md
+    CODEOWNERS
+    ISSUE_TEMPLATE/
+      config.yml
+      content-correction.yml
+      site-problem.yml
+    pull_request_template.md
   .gitignore
   .nojekyll
   404.html
@@ -17,62 +17,71 @@
   README.md
   SECURITY.md
   about/
-  about/index.html
+    index.html
+  apple-touch-icon.png
   assets/
-  assets/css/
-  assets/css/site.css
-  assets/icons/
-  assets/icons/favicon.svg
-  assets/icons/mask-icon.svg
-  assets/images/
-  assets/images/README.md
-  assets/js/
-  assets/js/config.js
-  assets/js/site.js
+    css/
+      easter-egg.css
+      site.css
+    icons/
+      favicon.svg
+      mask-icon.svg
+    images/
+      README.md
+      archie-www-easter-egg.png
+      archie-www-wave.png
+    js/
+      config.js
+      easter-egg.js
+      site.js
   contact/
-  contact/index.html
+    index.html
   contribute/
-  contribute/index.html
+    index.html
   docs/
-  docs/DEPLOYMENT.md
-  docs/FILE-MANIFEST.json
-  docs/MIGRATION-MAP.md
-  docs/PRE-COMMIT-CHECKLIST.md
-  docs/REPOSITORY-TREE.txt
-  docs/VALIDATION-REPORT.md
+    DEPLOYMENT.md
+    FILE-MANIFEST.json
+    MIGRATION-MAP.md
+    PRE-COMMIT-CHECKLIST.md
+    REPOSITORY-TREE.txt
+    VALIDATION-REPORT.md
+    WWW-EASTER-EGG.md
+  favicon.ico
   humans.txt
   index.html
   projects/
-  projects/anhqv-ts2/
-  projects/anhqv-ts2/index.html
-  projects/index.html
+    anhqv-ts2/
+      index.html
+    index.html
   provenance/
-  provenance/index.html
+    index.html
   reference/
-  reference/anhqv-ts2/
-  reference/anhqv-ts2/CITATION.cff
-  reference/anhqv-ts2/CONTRIBUTING.md
-  reference/anhqv-ts2/EXP001-Notes.md
-  reference/anhqv-ts2/EXP001-README.md
-  reference/anhqv-ts2/LICENSE
-  reference/anhqv-ts2/NOTICE.md
-  reference/anhqv-ts2/README-SNAPSHOT.md
-  reference/anhqv-ts2/README.md
-  reference/anhqv-ts2/RECRUITMENT.md
-  reference/archivo21/
-  reference/archivo21/Attribution.md
-  reference/archivo21/README.md
-  reference/archivo21/archivo-21.md
+    anhqv-ts2/
+      CITATION.cff
+      CONTRIBUTING.md
+      EXP001-Notes.md
+      EXP001-README.md
+      LICENSE
+      NOTICE.md
+      README-SNAPSHOT.md
+      README.md
+      RECRUITMENT.md
+    archivo21/
+      Attribution.md
+      README.md
+      archivo-21.md
   research/
-  research/exp000/
-  research/exp000/index.html
-  research/exp001/
-  research/exp001/index.html
-  research/index.html
+    exp000/
+      index.html
+    exp001/
+      index.html
+    index.html
   rights/
-  rights/index.html
+    index.html
   robots.txt
   site.webmanifest
   sitemap.xml
   tools/
-  tools/validate_site.py
+    validate_site.py
+  www/
+    index.html

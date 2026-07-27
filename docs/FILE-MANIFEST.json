@@ -1,5 +1,5 @@
 {
-  "prepared": "2026-07-26",
+  "prepared": "2026-07-27",
   "repository": "Archivo21/archivo21.github.io",
   "note": "Manifest excludes itself.",
   "files": [
@@ -45,8 +45,8 @@
     },
     {
       "path": "404.html",
-      "bytes": 2598,
-      "sha256": "3cc0d60d9d8cfbcdf8a0e1543e035b9572f0d05c22296bb13e380f8393ad7295"
+      "bytes": 2711,
+      "sha256": "dc503b64f9ca275e2fe84417003ca0812b1a75ad3b052f7c9fc6a402f9462319"
     },
     {
       "path": "CNAME",
@@ -65,13 +65,13 @@
     },
     {
       "path": "NOTICE.md",
-      "bytes": 1745,
-      "sha256": "94b3b766552c5b7e767fd4f3e043219413dcfb86735eb544e04648f85669ce2c"
+      "bytes": 2078,
+      "sha256": "e30bd3cca9b52b39bb4d01dac514907dad520835f8b4d708a4eac8274767da6a"
     },
     {
       "path": "README.md",
-      "bytes": 2845,
-      "sha256": "57089d38c337faca61806f9206c22b0632b61ab33568796e00b2fed398bfcd92"
+      "bytes": 3064,
+      "sha256": "6a0c1c74690e1aa098a85098af068e9b32d1bd799556f38f8a8c1b7b51cef392"
     },
     {
       "path": "SECURITY.md",
@@ -80,33 +80,58 @@
     },
     {
       "path": "about/index.html",
-      "bytes": 4468,
-      "sha256": "2431b8de8913bd8d62b4d1b8cdc8623ec1956cd191236daf8cb5669856f9ee0a"
+      "bytes": 4581,
+      "sha256": "d54d95671b0413d823cb58cf05f0cacf166cdaecd580621482273600303e932b"
+    },
+    {
+      "path": "apple-touch-icon.png",
+      "bytes": 27071,
+      "sha256": "3c0a9efb2df7d0427e6393ab25725bbdc9bb2b5ee14036fd9094654dab48a874"
+    },
+    {
+      "path": "assets/css/easter-egg.css",
+      "bytes": 6783,
+      "sha256": "2bdf0a349d0a344a80151090015b533fcb64ef055c0e923140b0a7c2f9187faf"
     },
     {
       "path": "assets/css/site.css",
-      "bytes": 7788,
-      "sha256": "f4327ecd0c7a40d1227c26a01370ac68acfd4eec7b698ceb7085d7bfea2959e4"
+      "bytes": 9438,
+      "sha256": "ad2bc9d45b5ff329ee15588581a51abcbc52e262c6aee39807154c0f304c8aee"
     },
     {
       "path": "assets/icons/favicon.svg",
-      "bytes": 399,
-      "sha256": "7b951af370403b4d3b42f93809e7d785cc45f799635313d40e973ec938560189"
+      "bytes": 1242,
+      "sha256": "23a13c5116c77a0876a0acc27a9cb3e24984d365ba344c82eb17af56cd6edf61"
     },
     {
       "path": "assets/icons/mask-icon.svg",
       "bytes": 399,
-      "sha256": "7b951af370403b4d3b42f93809e7d785cc45f799635313d40e973ec938560189"
+      "sha256": "fbf59056a78d869f10185a6e0b54efc1d099195b78bc12a3c6fdd704583d0538"
     },
     {
       "path": "assets/images/README.md",
-      "bytes": 448,
-      "sha256": "02d09b524c61b5e82d28e671ceae521814f321cb610f9287e78298cbfed81c9c"
+      "bytes": 1219,
+      "sha256": "3605c1023578d231a8cc19b0eabb5b46fb4c74a1744cb49efc00ff7627f974e6"
+    },
+    {
+      "path": "assets/images/archie-www-easter-egg.png",
+      "bytes": 793115,
+      "sha256": "ab3e664e85ae6a822f41e68885810dff4af2f03f7481a8225241796db2f45d51"
+    },
+    {
+      "path": "assets/images/archie-www-wave.png",
+      "bytes": 767667,
+      "sha256": "7f5d153b8e79ddb8f7e48db0b2298fa53fd76e06d20d4bf456dd5d4eb68c73cb"
     },
     {
       "path": "assets/js/config.js",
       "bytes": 248,
       "sha256": "0e8a7a33c8d390af5ca05c032fac015067850c780e64976a3593b2036d68e831"
+    },
+    {
+      "path": "assets/js/easter-egg.js",
+      "bytes": 5411,
+      "sha256": "6d1d76e9d1bd3c9524b1619f771e61f02c32b0dd8430f4efa1b45a18181e9dcc"
     },
     {
       "path": "assets/js/site.js",
@@ -115,18 +140,18 @@
     },
     {
       "path": "contact/index.html",
-      "bytes": 3143,
-      "sha256": "b1bbd8cf37d2e872d60b6eb4ca2f206f562b9e573684859f357202a778bccf38"
+      "bytes": 3256,
+      "sha256": "f20dacb99d717efe877ff44830cb4355c8ddeb0bfec46fb2b41b5a3a4b9b8de3"
     },
     {
       "path": "contribute/index.html",
-      "bytes": 4442,
-      "sha256": "770fbcd3084edf1113f1f746c6a7c93ec2f1c7a9a323079dcee438bd4c1ccd2e"
+      "bytes": 4555,
+      "sha256": "bd7e326674dea7fa37ad6de723ce71c52cbdc76f382c9198dac18d7d7bc8d440"
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 2885,
-      "sha256": "7e6ab1e10e6e94f91835225b26dd27bd5a64404eda4a1bd88a21a90e73d8d70e"
+      "bytes": 3233,
+      "sha256": "ebd7dda4f4b96e3f1d35751a921b1bc204f0e20c6c77eed11a966d1ba3bc4896"
     },
     {
       "path": "docs/MIGRATION-MAP.md",
@@ -135,18 +160,28 @@
     },
     {
       "path": "docs/PRE-COMMIT-CHECKLIST.md",
-      "bytes": 1496,
-      "sha256": "f86180485f8ddca368b0ff7c40e296ad221cda6b6e1a06b258e2876039b9350f"
+      "bytes": 1671,
+      "sha256": "25fa42ef1c4c1bc41192341e0f12f9d74b680f8ac552d9debe52a5de5e132a36"
     },
     {
       "path": "docs/REPOSITORY-TREE.txt",
-      "bytes": 1709,
-      "sha256": "a69aadf5c75ee3abe51fb24041ad15cfb757eed6fb306f6108384967ad5b818b"
+      "bytes": 1410,
+      "sha256": "d193639e8d32c049f944c6957d56e98bb9028911784078a929b880433b21ad6b"
     },
     {
       "path": "docs/VALIDATION-REPORT.md",
-      "bytes": 1100,
-      "sha256": "705c6f5a572a2962d80b287c792b8c94abf0469a8645813b0d9e5393a74a58a4"
+      "bytes": 1683,
+      "sha256": "689c8f30aedaa63fc8b4ae3a7a5e959c7a64050993ec552e9521adb5c9bfbe6a"
+    },
+    {
+      "path": "docs/WWW-EASTER-EGG.md",
+      "bytes": 2120,
+      "sha256": "10f22cb1313c2b9186eb39a60fd34fabed4c81e45d67802f4b93e16684227d3a"
+    },
+    {
+      "path": "favicon.ico",
+      "bytes": 15086,
+      "sha256": "20b4ac974207f1f411550f053a9be90493e53c80643918147ef4f83266a238e2"
     },
     {
       "path": "humans.txt",
@@ -155,23 +190,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 4814,
-      "sha256": "5b497142fdcb7061dfc42623e0339f8761dbb729bbd8a8fe92a213aca4c5c5d7"
+      "bytes": 5076,
+      "sha256": "5b1069a58fcd1594eb17aa02d4587cc2833a964fb8de4efc656a50e0a90d5727"
     },
     {
       "path": "projects/anhqv-ts2/index.html",
-      "bytes": 5346,
-      "sha256": "a8d76683db0037bd8cca4863d59608b54b6e94122c29db04ab563265a7654806"
+      "bytes": 5459,
+      "sha256": "1cefd51589c012df55c32f2cb241df9cef5d6a74f61472b6bb7adec694c4e128"
     },
     {
       "path": "projects/index.html",
-      "bytes": 3204,
-      "sha256": "41fba13b16e4a5769ef232624284dbd7ecb9ad8ae87b3b84b20d6734d36d6393"
+      "bytes": 3317,
+      "sha256": "b57f85a20fcdb303a12d72f405bfda6d6d45bbe34f00eb787a12b67d614a21eb"
     },
     {
       "path": "provenance/index.html",
-      "bytes": 4421,
-      "sha256": "8965f17fdf92d113044ab8858cfedeec7489d636346847e70fda9c7a124cd67a"
+      "bytes": 4534,
+      "sha256": "c71c3d7a5dc78685c22d667d6dc1b72d405638c37ca9ccf11d6fdfec09c7e57c"
     },
     {
       "path": "reference/anhqv-ts2/CITATION.cff",
@@ -235,23 +270,23 @@
     },
     {
       "path": "research/exp000/index.html",
-      "bytes": 5421,
-      "sha256": "56f5bba39cc5f0008b26ca74034ef5e824c2e5b3f34b42ff87f7bfb42e3121ed"
+      "bytes": 6703,
+      "sha256": "c9a4f50f520988f2104e89c6899972a070765b46c6d7c11651e2af9faef09063"
     },
     {
       "path": "research/exp001/index.html",
-      "bytes": 4360,
-      "sha256": "b5e3841e5b9542243d37ee0ad141f0d732001445aeb93eee27a60bee5577c08b"
+      "bytes": 4473,
+      "sha256": "8651d5195f3e69b19ef0a86613ff18efa60bc19b9d5b5132871e75e533191309"
     },
     {
       "path": "research/index.html",
-      "bytes": 3514,
-      "sha256": "b30fdb31e44f7f1d366a7944660741ed7be49bd0f6de652eac34090e1fc1f262"
+      "bytes": 3627,
+      "sha256": "1e817e35a504bd5e2a8761e1e97be4f9ed77935786bfd1682f2582eec59f556a"
     },
     {
       "path": "rights/index.html",
-      "bytes": 4307,
-      "sha256": "1e5a381503d475c13a6c51e2e690570ba5c544218b72aa757d68ed49d1144032"
+      "bytes": 4420,
+      "sha256": "f0c19acdbd99b9b5b19868eebd604294e2f27735ce496b3d655afd226366b2df"
     },
     {
       "path": "robots.txt",
@@ -260,8 +295,8 @@
     },
     {
       "path": "site.webmanifest",
-      "bytes": 289,
-      "sha256": "324a529fdacb348dd229963f5be7ccff5f0445722587f2c8b4bd6519282672b0"
+      "bytes": 392,
+      "sha256": "b3ccc96f2160762437bfbcce4714ae316b8422da2959cf194653e25ac055238c"
     },
     {
       "path": "sitemap.xml",
@@ -272,6 +307,11 @@
       "path": "tools/validate_site.py",
       "bytes": 2070,
       "sha256": "99145fc80074b1ac91033a28e7c2675baed5dcd1f17fbb02c4d43592653f30ea"
+    },
+    {
+      "path": "www/index.html",
+      "bytes": 11552,
+      "sha256": "db0e60978d24ca5f5dc80777e2cbdd1b9c602caa820c9957c5fc574a427ed958"
     }
   ]
 }

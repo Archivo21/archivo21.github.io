@@ -28,6 +28,10 @@ This repository is designed to publish directly from the default branch without 
 5. Enable **Enforce HTTPS** when GitHub offers it.
 6. Confirm `CNAME` still contains only `archivo21.org`.
 
+After the apex domain and certificate are healthy, configure the `www` Easter
+egg according to [`WWW-EASTER-EGG.md`](WWW-EASTER-EGG.md). The `www` DNS record
+must be proxied for Cloudflare's redirect rule to run.
+
 The `CNAME` file alone does not finish custom-domain configuration; the domain must also be saved in the repository's Pages settings.
 
 ## Contact routes
@@ -65,7 +69,9 @@ Run `python tools/validate_site.py` from the repository root. Then review:
 - keyboard focus order;
 - 404 page;
 - canonical links;
-- absence of public recording-platform URLs;
+- only the approved EXP000 Short is publicly embedded;
+- all fourteen `/www/` objects have an accessible link name;
+- `/www/` remains silent until its noise control is activated;
 - custom-domain HTTPS;
 - absence of personal Gmail addresses or credentials;
 - whether the website still describes the project state accurately.

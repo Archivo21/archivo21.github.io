@@ -15,7 +15,7 @@
 - [ ] ANHQV-TS2 status and release language match the canonical repository.
 - [ ] EXP000 is labelled concluded and its retrospective documentation limits remain explicit.
 - [ ] EXP001 is still labelled ongoing unless a reviewed conclusion now exists.
-- [ ] No recording-platform URLs are showcased publicly.
+- [ ] The approved EXP000 Short is the only public recording-platform URL.
 - [ ] Any newer local files have replaced stale migration snapshots.
 
 ## Privacy and rights
@@ -33,4 +33,6 @@
 - [ ] Custom domain is also saved in GitHub Pages settings.
 - [ ] Cloudflare DNS and DNSSEC are reviewed.
 - [ ] HTTPS works before advertising the domain.
+- [ ] The `www` Cloudflare redirect opens `/www/` without replacing the apex homepage.
+- [ ] All fourteen Easter-egg objects remain keyboard-operable links.
 - [ ] `python tools/validate_site.py` passes.

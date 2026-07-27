@@ -20,6 +20,7 @@ The first active project is [ANHQV × The Sims 2 Preservation Project](https://g
 ├── provenance/                # founding and attribution summary
 ├── rights/                    # licensing and third-party material
 ├── contact/                   # institutional contact routes
+├── www/                       # hidden, noindex Archie Easter egg
 ├── assets/                    # CSS, JavaScript, icons and image policy
 ├── reference/                 # migrated source snapshots; not canonical
 ├── docs/                      # deployment, migration and review notes
@@ -39,6 +40,9 @@ This site has no build step and no external runtime dependencies.
 The included `CNAME` file contains `archivo21.org`. Remove it before the first commit if the custom domain is not ready.
 
 See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the complete checklist.
+
+The `www` Easter egg requires one Cloudflare hostname redirect after the files
+are live. See [`docs/WWW-EASTER-EGG.md`](docs/WWW-EASTER-EGG.md).
 
 ## Contact activation
 
