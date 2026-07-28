@@ -1,5 +1,5 @@
 window.ARCHIVO21_CONFIG = Object.freeze({
-  contactRoutingActive: false,
+  contactRoutingActive: true,
   contacts: {
     general: "contact@archivo21.org",
     conduct: "conduct@archivo21.org",
