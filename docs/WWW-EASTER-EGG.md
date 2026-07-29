@@ -45,16 +45,25 @@ caching the destination during testing.
 2. Open `https://www.archivo21.org/` in a private window: the Archie page should
    load at `https://archivo21.org/www/`.
 3. Confirm the sound remains off until **TURN THE NOISE ON** is pressed.
-4. Keyboard-tab through all fourteen linked objects and confirm each receives a
+4. Keyboard-tab through all fifteen linked objects and confirm each receives a
    visible dotted focus outline.
-5. Open `/www/` on a portrait phone: Archie should remain central, all fourteen
+5. Open `/www/` on a portrait phone: Archie should remain central, all fifteen
    objects should remain fully tappable inside the tall stage, and the noise
    control should be reachable without rotating the device.
+
+The routing and text-fallback structure was verified before publication. The
+two rendered checks above are retained for the user's post-publication visual
+inspection; no agent visual pass was performed under the PRE003 release
+instruction.
+
+The fifteenth object is a small `web.` terminal icon. It opens the Legacy
+Edition at `https://web.archivo21.org/`; its visible `web.` caption is the
+textual fallback for clients that cannot draw the SVG artwork.
 
 ## Smartphone layout
 
 Portrait displays up to 700 CSS pixels wide use a separate tall composition
-rather than squeezing the desktop scatter horizontally. The same fourteen
+rather than squeezing the desktop scatter horizontally. The same fifteen
 links retain deliberately mismatched sizes and animation styles, but are
 distributed through seven staggered rows around Archie. Every link keeps a
 minimum 48 × 48 CSS-pixel tap target; the noise control keeps a minimum
