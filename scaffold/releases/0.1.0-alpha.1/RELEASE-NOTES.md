@@ -15,7 +15,7 @@
 
 The ZIP archived here is the exact package inspected and approved by lcd97. Its internal wording records that it was assembled as a private development alpha. That historical wording has not been silently changed for publication.
 
-The ZIP is preserved as eight Base64 text segments under `data/`. The browser download route and the manual reconstruction instructions both require verification against the approved SHA-256 digest.
+The ZIP is preserved as ten Base64 text segments under `data/`. The browser download route and the manual reconstruction instructions both require verification against the approved SHA-256 digest.
 
 ## Known limitation
 
