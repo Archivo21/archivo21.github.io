@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Project Scaffold 0.1.0-alpha.1 — Archivo 21</title>
+  <meta name="description" content="Verify and download the exact inspected Archivo 21 Project Scaffold ZIP.">
+  <meta name="theme-color" content="#0b0906">
+  <link rel="canonical" href="https://archivo21.org/scaffold/releases/0.1.0-alpha.1/download/">
+  <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><a class="brand" href="/" aria-label="Archivo 21 home"><img class="brand-logo" src="/assets/images/archivo21-provisional-logo-transparent-header.png" width="360" height="360" alt="" decoding="async"></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav id="primary-nav" class="primary-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/contribute/">Contribute</a><a href="/rights/">Rights</a><a href="/contact/">Contact</a></nav></header>
+  <main id="main">
+    <section class="page-intro section">
+      <p class="eyebrow">Verified release capsule</p><h1>Download Project Scaffold 0.1.0-alpha.1</h1><p class="lede">The exact inspected ZIP is stored as text-safe archival segments. This page reassembles the bytes locally, verifies the SHA-256 and then downloads the file.</p>
+      <div class="button-row"><button class="button primary" id="download-button" type="button">Verify and download ZIP</button><a class="button" href="/scaffold/releases/0.1.0-alpha.1/">Return to release record</a></div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready. No file data has been fetched yet.</p>
+    </section>
+    <section class="section reading-width">
+      <h2>Expected identity</h2><p><strong>Filename:</strong> <code>archivo21-project-scaffold-0.1.0-alpha.1.zip</code></p><p><strong>SHA-256:</strong> <code>f34eb9aae666bbd5f961c602f6e7c882a628931d9935dee9ba355c8002f60bc8</code></p>
+      <h2>What happens in your browser</h2><ol><li>Eight Base64 text segments are fetched from this same release directory.</li><li>Your browser reconstructs the ZIP in memory.</li><li>SHA-256 is calculated locally.</li><li>The download begins only if the digest matches the approved release.</li></ol>
+      <p>No data is uploaded. Archivo 21 uses no analytics or tracking.</p><noscript><p><strong>JavaScript is required for automatic reconstruction.</strong> The archived segments remain available under <code>../data/</code> for manual reconstruction.</p></noscript>
+    </section>
+  </main>
+  <footer class="site-footer"><div><strong>Archivo 21</strong><br>Independent digital preservation and research.</div><div class="footer-links"><a href="https://github.com/Archivo21">GitHub</a><a href="/provenance/">Provenance</a><a href="/rights/">Rights</a><a href="/contact/">Contact</a></div><div class="footer-note">No analytics. No tracking. Built as plain static files.</div></footer>
+  <script src="/assets/js/config.js"></script><script src="/assets/js/site.js"></script>
+  <script>
+  (() => {
+    const parts = ['../data/zip.part01.b64','../data/zip.part02.b64','../data/zip.part03.b64','../data/zip.part04.b64','../data/zip.part05.b64','../data/zip.part06.b64','../data/zip.part07.b64','../data/zip.part08.b64'];
+    const expected = 'f34eb9aae666bbd5f961c602f6e7c882a628931d9935dee9ba355c8002f60bc8';
+    const filename = 'archivo21-project-scaffold-0.1.0-alpha.1.zip';
+    const button = document.getElementById('download-button');
+    const status = document.getElementById('status');
+    const hex = buffer => Array.from(new Uint8Array(buffer), b => b.toString(16).padStart(2, '0')).join('');
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      try {
+        status.textContent = 'Fetching archived segments…';
+        const texts = await Promise.all(parts.map(async path => {
+          const response = await fetch(path, { cache: 'no-store' });
+          if (!response.ok) throw new Error(`Could not fetch ${path} (${response.status})`);
+          return (await response.text()).trim();
+        }));
+        status.textContent = 'Reassembling exact ZIP bytes…';
+        const binary = atob(texts.join(''));
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+        status.textContent = 'Verifying SHA-256…';
+        const actual = hex(await crypto.subtle.digest('SHA-256', bytes));
+        if (actual !== expected) throw new Error(`Integrity check failed. Expected ${expected}, received ${actual}.`);
+        const blob = new Blob([bytes], { type: 'application/zip' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url; link.download = filename; document.body.appendChild(link); link.click(); link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 30000);
+        status.textContent = `Verified ${actual}. Download started.`;
+      } catch (error) {
+        console.error(error); status.textContent = `Download stopped: ${error.message}`;
+      } finally { button.disabled = false; }
+    });
+  })();
+  </script>
+</body>
+</html>
