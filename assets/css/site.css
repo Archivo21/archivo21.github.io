@@ -153,6 +153,20 @@ code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size
   letter-spacing: .04em;
   text-transform: uppercase;
 }
+.legacy-escape {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 18px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 #000;
+  font-size: .78rem;
+  letter-spacing: .02em;
+  text-align: center;
+  white-space: nowrap;
+}
+.legacy-escape:hover { background: var(--accent) !important; color: var(--ink) !important; }
 .section { max-width: var(--max); margin: 0 auto; padding: clamp(3.5rem, 7vw, 7rem) 1.25rem; }
 .section-grid { max-width: var(--max); margin: 0 auto; padding: clamp(4rem, 9vw, 8rem) 1.25rem; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, .8fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .hero { min-height: calc(100svh - var(--header-height)); }
@@ -474,9 +488,14 @@ blockquote { margin: 2rem 0; border-left: 4px solid var(--accent); padding: 1.2r
 .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
 .footer-note { grid-column: 1 / -1; font-size: .85rem; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (min-width: 851px) and (max-width: 1120px) {
+  :root { --header-height: 204px; }
+  .site-header { flex-wrap: wrap; align-content: start; padding-bottom: .8rem; }
+  .legacy-escape { order: 3; flex-basis: 100%; margin-top: -1.15rem; }
+}
 @media (max-width: 850px) {
-  :root { --header-height: 104px; }
-  .site-header { gap: .75rem; }
+  :root { --header-height: 164px; }
+  .site-header { flex-wrap: wrap; gap: .45rem .75rem; padding-bottom: .5rem; }
   .site-header::before {
     top: auto;
     bottom: 0;
@@ -495,6 +514,7 @@ blockquote { margin: 2rem 0; border-left: 4px solid var(--accent); padding: 1.2r
   }
   .brand-logo { width: 86px; }
   .nav-toggle { display: block; }
+  .legacy-escape { order: 3; flex-basis: 100%; margin: -1.05rem 0 0; }
   .primary-nav {
     display: none;
     position: absolute;

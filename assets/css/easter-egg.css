@@ -147,6 +147,20 @@ h1 {
 .item-12 { --size: 86px; --delay: -520ms; right: 27%; top: 47%; }
 .item-13 { --size: 104px; --delay: -300ms; right: 5%; top: 50%; }
 .item-14 { --size: 88px; --delay: -60ms; right: 24%; top: 28%; }
+.item-15 { --size: 78px; --delay: -250ms; right: 36%; top: 2%; }
+
+.icon-caption {
+  position: absolute;
+  bottom: -1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .08rem .25rem;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font: 900 .68rem/1 "Courier New", monospace;
+  text-decoration: underline;
+}
 
 .controls {
   display: grid;
@@ -268,6 +282,7 @@ h1 {
   .item-12 { --size: clamp(54px, 17vw, 70px); right: 18%; top: 75%; }
   .item-13 { --size: clamp(62px, 19vw, 80px); left: 2%; right: auto; top: auto; bottom: 1%; }
   .item-14 { --size: clamp(54px, 17vw, 70px); right: 2%; top: auto; bottom: 0; }
+  .item-15 { --size: clamp(52px, 16vw, 68px); right: 40%; top: 2%; }
   .controls { gap: .55rem; padding-bottom: .5rem; }
   #noise-toggle { min-height: 44px; padding-inline: .85rem; }
   .link-readout { min-height: 2.4em; padding-inline: .5rem; }

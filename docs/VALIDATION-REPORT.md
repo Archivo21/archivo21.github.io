@@ -97,7 +97,22 @@
 - Confirm the GitHub Pages deployment completes for the published commit.
 - Confirm the homepage, all transparent assets, EXP000 and `/www/` return
   successful public responses after publication.
-- Inspect the live homepage at one desktop and one narrow portrait viewport
-  when an interactive browser is available.
-- Add and test the separate Cloudflare `www` redirect described in
-  `WWW-EASTER-EGG.md`.
+- The desktop and narrow-portrait visual inspection is explicitly retained for
+  the user after publication. It was not performed by the agent under the
+  PRE003 final-publication instruction.
+
+## BIG03 resilience supplement — 2026-07-29
+
+- Every current institutional HTML page carries a raw-HTML Legacy Edition link
+  in both the header and footer. The header link has inline contrast and border
+  styling so that it stays conspicuous if the main stylesheet is unavailable.
+- The institutional homepage includes the intentionally subdued but ordinary
+  HTML discovery link, **There is a side door.**, to `/www/`.
+- The Archie page now includes a fifteenth linked object: the text-backed
+  `web.` terminal icon, which opens `https://web.archivo21.org/` and remains a
+  link if SVG artwork is unavailable.
+- `tools/validate_site.py` enforces the two Legacy Edition links on every
+  institutional page, the homepage side door, and the Archie `web.` fallback.
+- `DISPLAY-DEGRADATION-TEST-MATRIX.md` records the required display and
+  fail-open checks. The user authorised publication without an agent visual
+  pass; their own live visual inspection remains a post-publication check.

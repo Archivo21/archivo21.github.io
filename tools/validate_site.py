@@ -18,6 +18,7 @@ class LinkParser(HTMLParser):
                 self.links.append((tag, key, d[key]))
 
 html_files = sorted(ROOT.rglob('*.html'))
+main_site_pages = [html for html in html_files if html.relative_to(ROOT).as_posix() != 'www/index.html']
 for html in html_files:
     parser = LinkParser()
     try:
@@ -51,6 +52,22 @@ for item in required:
 for p in ROOT.rglob('*'):
     if p.is_file() and p.stat().st_size == 0 and p.name != '.nojekyll':
         errors.append(f'unexpected zero-byte file: {p.relative_to(ROOT)}')
+
+legacy_url = 'https://web.archivo21.org/'
+for html in main_site_pages:
+    markup = html.read_text(encoding='utf-8')
+    if markup.count(legacy_url) < 2:
+        errors.append(f'{html.relative_to(ROOT)}: missing persistent header/footer Legacy Edition links')
+    if 'class="legacy-escape"' not in markup or 'style="display:inline-block;background:#0b0906' not in markup:
+        errors.append(f'{html.relative_to(ROOT)}: Legacy Edition header link is not fail-open raw HTML')
+
+home_markup = (ROOT / 'index.html').read_text(encoding='utf-8')
+if '<a href="/www/">There is a side door.</a>' not in home_markup:
+    errors.append('index.html: missing documented discoverable /www/ side-door link')
+
+www_markup = (ROOT / 'www' / 'index.html').read_text(encoding='utf-8')
+if legacy_url not in www_markup or 'icon-legacy' not in www_markup or '<span class="icon-caption">web.</span>' not in www_markup:
+    errors.append('www/index.html: missing text-backed Legacy Edition icon')
 
 if errors:
     print('FAIL')
