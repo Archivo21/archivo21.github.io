@@ -42,6 +42,8 @@
 - [ ] Cloudflare DNS and DNSSEC are reviewed.
 - [ ] HTTPS works before advertising the domain.
 - [ ] The `www` Cloudflare redirect opens `/www/` without replacing the apex homepage.
-- [ ] All fourteen Easter-egg objects remain keyboard-operable links.
-- [ ] All fourteen Easter-egg objects remain fully tappable in the portrait-phone composition.
+- [ ] All fifteen Easter-egg objects remain keyboard-operable links.
+- [ ] All fifteen Easter-egg objects remain fully tappable in the portrait-phone composition.
+- [ ] The Scaffold object remains a literal scaffolding icon and links to `/scaffold/`.
+- [ ] The Legacy Edition remains object fifteen with visible and screen-reader text fallback.
 - [ ] `python tools/validate_site.py` passes.

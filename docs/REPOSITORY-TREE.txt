@@ -47,6 +47,7 @@
     DEPLOYMENT.md
     FILE-MANIFEST.json
     MIGRATION-MAP.md
+    NAVIGATION-AND-PUBLICATION-RECORD-2026-07-30.md
     PRE-COMMIT-CHECKLIST.md
     REPOSITORY-TREE.txt
     VALIDATION-REPORT.md
@@ -54,6 +55,8 @@
   favicon.ico
   humans.txt
   index.html
+  index/
+    index.html
   projects/
     anhqv-ts2/
       index.html
@@ -83,6 +86,16 @@
     index.html
   rights/
     index.html
+  scaffold/
+    index.html
+    process/
+      index.html
+    releases/
+      0.1.0-alpha.1/
+        download/
+          index.html
+        download.zip
+        index.html
   robots.txt
   site.webmanifest
   sitemap.xml

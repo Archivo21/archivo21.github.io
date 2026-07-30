@@ -13,9 +13,11 @@ The first active project is [ANHQV × The Sims 2 Preservation Project](https://g
 ```text
 .
 ├── index.html                 # institutional landing page
+├── index/                     # complete click-through page index
 ├── about/                     # purpose and research principles
 ├── projects/                  # project directory and ANHQV-TS2 overview
 ├── research/                  # curated experiment routes
+├── scaffold/                  # Project Scaffold, records and downloads
 ├── contribute/                # participation and recruitment
 ├── provenance/                # founding and attribution summary
 ├── rights/                    # licensing and third-party material
@@ -29,7 +31,9 @@ The first active project is [ANHQV × The Sims 2 Preservation Project](https://g
 
 ## Publish
 
-This site has no build step and no external runtime dependencies.
+This site has no build step and no external runtime dependencies. GitHub
+Pages is the production origin; the repository is not published through a
+ChatGPT Site.
 
 1. Create the public repository `Archivo21/archivo21.github.io`.
 2. Add these files at the repository root.
@@ -45,8 +49,9 @@ Change records use the decorative-only or full tier defined in
 both tiers require a recoverable pre-change checkpoint retained for at least
 28 days.
 
-The `www` Easter egg requires one Cloudflare hostname redirect after the files
-are live. See [`docs/WWW-EASTER-EGG.md`](docs/WWW-EASTER-EGG.md).
+The `www` Easter egg contains fifteen linked objects, including the Project
+Scaffold and the GitHub-backed Legacy Edition. See
+[`docs/WWW-EASTER-EGG.md`](docs/WWW-EASTER-EGG.md).
 
 ## Contact activation
 

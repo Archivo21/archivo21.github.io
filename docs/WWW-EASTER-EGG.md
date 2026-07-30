@@ -58,7 +58,12 @@ instruction.
 
 The fifteenth object is a small `web.` terminal icon. It opens the Legacy
 Edition at `https://web.archivo21.org/`; its visible `web.` caption is the
-textual fallback for clients that cannot draw the SVG artwork.
+short textual fallback for clients that cannot draw the SVG artwork, and its
+full link name remains present for screen readers and unstyled HTML.
+
+The thirteenth object is a literal scaffolding structure linking to the
+Archivo 21 Project Scaffold. It replaces the earlier duplicate contribution
+object, so the page remains at fifteen linked objects in total.
 
 ## Smartphone layout
 
