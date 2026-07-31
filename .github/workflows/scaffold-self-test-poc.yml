@@ -1,0 +1,337 @@
+name: Scaffold self-hosting proof
+
+on:
+  push:
+    branches:
+      - proof/scaffold-self-test-20260731
+
+permissions:
+  contents: read
+
+jobs:
+  build-next-scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out proof branch
+        uses: actions/checkout@v4
+
+      - name: Reconstruct, inspect, and self-host Scaffold
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/scaffold_self_test.py <<'PY'
+          from __future__ import annotations
+
+          import base64
+          import hashlib
+          import json
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          SOURCE_VERSION = "0.1.0-alpha.1"
+          TARGET_VERSION = "0.1.0-alpha.2-poc"
+          EXPECTED_SIZE = 50169
+          EXPECTED_SHA256 = "f34eb9aae666bbd5f961c602f6e7c882a628931d9935dee9ba355c8002f60bc8"
+          RELEASE = Path("scaffold/releases") / SOURCE_VERSION
+          PARTS = [
+              "zip.part01.b64",
+              "zip.part02.b64",
+              "zip.part03.b64",
+              "zip.part04.b64",
+              "zip.part05.b64",
+              "zip.part06.b64",
+              "zip.part06b.b64",
+              "zip.part07.b64",
+              "zip.part07b.b64",
+              "zip.part08.b64",
+          ]
+          OUT = Path("scaffold-self-test-output")
+          ORIGINAL_ZIP = OUT / f"archivo21-project-scaffold-{SOURCE_VERSION}.zip"
+          SUCCESSOR_ZIP = OUT / f"archivo21-project-scaffold-{TARGET_VERSION}.zip"
+          EXTRACTED = OUT / "source-extracted"
+          SUCCESSOR_PARENT = OUT / "successor-tree"
+
+          def sha256_bytes(data: bytes) -> str:
+              return hashlib.sha256(data).hexdigest()
+
+          def sha256_file(path: Path) -> str:
+              h = hashlib.sha256()
+              with path.open("rb") as handle:
+                  for chunk in iter(lambda: handle.read(65536), b""):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def text_or_none(path: Path) -> str | None:
+              try:
+                  data = path.read_bytes()
+              except OSError:
+                  return None
+              if b"\x00" in data:
+                  return None
+              try:
+                  return data.decode("utf-8")
+              except UnicodeDecodeError:
+                  return None
+
+          def deterministic_zip(source_root: Path, destination: Path) -> None:
+              timestamp = (2026, 7, 31, 20, 8, 0)
+              with zipfile.ZipFile(destination, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+                  root_name = source_root.name
+                  directories = sorted([p for p in source_root.rglob("*") if p.is_dir()], key=lambda p: p.as_posix().lower())
+                  files = sorted([p for p in source_root.rglob("*") if p.is_file()], key=lambda p: p.as_posix().lower())
+                  root_info = zipfile.ZipInfo(root_name + "/", timestamp)
+                  root_info.external_attr = (0o40755 << 16) | 0x10
+                  archive.writestr(root_info, b"")
+                  for directory in directories:
+                      rel = directory.relative_to(source_root).as_posix()
+                      info = zipfile.ZipInfo(f"{root_name}/{rel}/", timestamp)
+                      info.external_attr = (0o40755 << 16) | 0x10
+                      archive.writestr(info, b"")
+                  for path in files:
+                      rel = path.relative_to(source_root).as_posix()
+                      info = zipfile.ZipInfo(f"{root_name}/{rel}", timestamp)
+                      info.compress_type = zipfile.ZIP_DEFLATED
+                      info.external_attr = 0o100644 << 16
+                      archive.writestr(info, path.read_bytes())
+
+          OUT.mkdir(parents=True, exist_ok=True)
+          joined = "".join("".join((RELEASE / "data" / part).read_text(encoding="ascii").split()) for part in PARTS)
+          source_bytes = base64.b64decode(joined, validate=True)
+          ORIGINAL_ZIP.write_bytes(source_bytes)
+          actual_size = len(source_bytes)
+          actual_sha = sha256_bytes(source_bytes)
+          if actual_size != EXPECTED_SIZE:
+              raise SystemExit(f"Source size mismatch: expected {EXPECTED_SIZE}, got {actual_size}")
+          if actual_sha != EXPECTED_SHA256:
+              raise SystemExit(f"Source digest mismatch: expected {EXPECTED_SHA256}, got {actual_sha}")
+
+          if EXTRACTED.exists():
+              shutil.rmtree(EXTRACTED)
+          EXTRACTED.mkdir(parents=True)
+          with zipfile.ZipFile(ORIGINAL_ZIP) as archive:
+              archive.testzip()
+              archive.extractall(EXTRACTED)
+
+          roots = [p for p in EXTRACTED.iterdir() if p.is_dir()]
+          if len(roots) != 1:
+              raise SystemExit(f"Expected one source root, found {len(roots)}")
+          source_root = roots[0]
+          source_files = sorted([p for p in source_root.rglob("*") if p.is_file()])
+          source_dirs = sorted([p for p in source_root.rglob("*") if p.is_dir()])
+          top_level = sorted(p.name for p in source_root.iterdir())
+
+          source_texts: dict[str, str] = {}
+          for path in source_files:
+              text = text_or_none(path)
+              if text is not None:
+                  source_texts[path.relative_to(source_root).as_posix()] = text
+
+          combined_lower = "\n".join(source_texts.values()).lower()
+          original_scripts = [
+              p.relative_to(source_root).as_posix()
+              for p in source_files
+              if p.suffix.lower() in {".py", ".sh", ".bat", ".cmd", ".ps1", ".js", ".pl", ".rb"}
+          ]
+          version_occurrences = sorted(path for path, text in source_texts.items() if SOURCE_VERSION in text)
+          placeholder_markers = [marker for marker in ("{{", "${", "@@", "<project_name>", "[project name]") if marker in combined_lower]
+          has_machine_manifest = any(
+              p.name.lower() in {"manifest.json", "manifest.csv", "manifest.txt", "checksums.sha256", "sha256sums"}
+              for p in source_files
+          )
+          has_example_project = any(p.name.upper() == "EXAMPLE-PROJECT" and p.is_dir() for p in source_root.iterdir())
+          has_build_instruction = any(term in combined_lower for term in ("build the scaffold", "generate the scaffold", "create the next scaffold", "rebuild this pack", "build script"))
+
+          if SUCCESSOR_PARENT.exists():
+              shutil.rmtree(SUCCESSOR_PARENT)
+          SUCCESSOR_PARENT.mkdir(parents=True)
+          successor_root = SUCCESSOR_PARENT / source_root.name
+          shutil.copytree(source_root, successor_root)
+
+          changed_version_files: list[str] = []
+          for path in sorted([p for p in successor_root.rglob("*") if p.is_file()]):
+              rel = path.relative_to(successor_root).as_posix()
+              if rel.startswith("ARCHIVE/"):
+                  continue
+              text = text_or_none(path)
+              if text is None or SOURCE_VERSION not in text:
+                  continue
+              path.write_text(text.replace(SOURCE_VERSION, TARGET_VERSION), encoding="utf-8", newline="\n")
+              changed_version_files.append(rel)
+
+          (successor_root / "SOURCES").mkdir(exist_ok=True)
+          (successor_root / "OUTPUTS").mkdir(exist_ok=True)
+          (successor_root / "GOVERNANCE").mkdir(exist_ok=True)
+          (successor_root / "ARCHIVE").mkdir(exist_ok=True)
+
+          builder_source = Path("/tmp/scaffold_self_test.py").read_text(encoding="utf-8")
+          (successor_root / "SOURCES" / "BUILD-NEXT-SCAFFOLD.py").write_text(builder_source, encoding="utf-8", newline="\n")
+
+          verdict = (
+              "PASS WITH MAJOR CHANGES REQUIRED: the pack supplies a coherent documentary structure and example project, "
+              "but the published source pack does not contain a self-hosting builder, a central machine-readable release identity, "
+              "or an explicit deterministic validation command. This proof could produce a successor only by adding those mechanisms."
+          )
+
+          major_changes = [
+              {
+                  "id": "MC-001",
+                  "title": "Add a canonical self-hosting build command",
+                  "evidence": f"Original executable/build scripts found: {len(original_scripts)}.",
+                  "required_change": "Ship one documented builder that creates a fresh project or successor pack from declared inputs without external interpretation.",
+              },
+              {
+                  "id": "MC-002",
+                  "title": "Centralise release identity and substitution",
+                  "evidence": f"The source version appears in {len(version_occurrences)} UTF-8 files and no canonical VERSION/manifest identity was established by the pack.",
+                  "required_change": "Add VERSION.TXT or manifest.json and a bounded substitution map that excludes immutable ARCHIVE records.",
+              },
+              {
+                  "id": "MC-003",
+                  "title": "Add deterministic packaging and validation",
+                  "evidence": f"Machine-readable checksum manifest present: {has_machine_manifest}; explicit self-rebuild instruction detected: {has_build_instruction}.",
+                  "required_change": "Define reproducible ordering, timestamps, permissions, line endings, ZIP settings, file count, byte size, and checksum verification.",
+              },
+              {
+                  "id": "MC-004",
+                  "title": "Define template variables and project-creation semantics",
+                  "evidence": f"Recognised placeholder markers found: {placeholder_markers or 'none'}; example project present: {has_example_project}.",
+                  "required_change": "Declare which files are templates, which values may change, which records are immutable, and what constitutes a successfully generated project.",
+              },
+              {
+                  "id": "MC-005",
+                  "title": "Separate scaffold release from generated example",
+                  "evidence": "The proof had to infer whether copying the full pack, copying EXAMPLE-PROJECT, or editing documentation represented the intended operation.",
+                  "required_change": "Provide explicit modes such as NEW PROJECT, NEXT SCAFFOLD RELEASE, VALIDATE, and DTA/TRY AGAIN where applicable.",
+              },
+          ]
+
+          provenance = f"""# Scaffold self-hosting proof provenance
+
+          Status: PRIVATE PROOF OF CONCEPT / NOT A PUBLIC RELEASE
+          Date: 2026-07-31
+          Authority: A21-HUM-001
+          Recorder and implementer: A21-AI-001
+
+          Source package: archivo21-project-scaffold-{SOURCE_VERSION}.zip
+          Source size: {actual_size} bytes
+          Source SHA-256: {actual_sha}
+          Target candidate: archivo21-project-scaffold-{TARGET_VERSION}.zip
+
+          The approved source bytes were reconstructed from the ten archival Base64 segments, verified before extraction, and left unchanged. The successor tree was copied from the extracted Scaffold pack. Version replacement was restricted to non-ARCHIVE UTF-8 files. New self-test, build, governance, and checksum records were then added.
+
+          This candidate proves that the published pack can act as a documentary and directory scaffold. It does not prove that the original pack was self-hosting, because the build and validation machinery used here had to be supplied externally and is included for the first time in this proof candidate.
+          """
+          (successor_root / "ARCHIVE" / "SELF-HOSTING-PROVENANCE.md").write_text(provenance, encoding="utf-8", newline="\n")
+
+          decision_log = """# Scaffold self-test decision log
+
+          D-SCAF-POC-001 — Preserve and verify the exact approved alpha.1 bytes before use.
+          D-SCAF-POC-002 — Treat capture and copying as insufficient; the test must produce a distinct successor ZIP.
+          D-SCAF-POC-003 — Do not alter immutable ARCHIVE text during version substitution.
+          D-SCAF-POC-004 — Mark the successor as a private proof, not a public release.
+          D-SCAF-POC-005 — Record missing self-hosting machinery as a major product change, not as invisible implementation glue.
+          """
+          (successor_root / "GOVERNANCE" / "SELF-TEST-DECISION-LOG.md").write_text(decision_log, encoding="utf-8", newline="\n")
+
+          identity = f"""PROJECT=SCAFFOLD
+          VERSION={TARGET_VERSION}
+          STATUS=PRIVATE-PROOF-OF-CONCEPT
+          SOURCE_VERSION={SOURCE_VERSION}
+          SOURCE_SHA256={actual_sha}
+          BUILD_DATE=2026-07-31
+          """
+          (successor_root / "PACK-IDENTITY.txt").write_text(identity, encoding="ascii", newline="\r\n")
+
+          pre_manifest_files = sorted([p for p in successor_root.rglob("*") if p.is_file() and p.name != "MANIFEST-SHA256.txt"], key=lambda p: p.as_posix().lower())
+          manifest_lines = [f"{sha256_file(path)}  {path.relative_to(successor_root).as_posix()}" for path in pre_manifest_files]
+          (successor_root / "MANIFEST-SHA256.txt").write_text("\n".join(manifest_lines) + "\n", encoding="ascii", newline="\r\n")
+
+          deterministic_zip(successor_root, SUCCESSOR_ZIP)
+          successor_sha = sha256_file(SUCCESSOR_ZIP)
+          successor_size = SUCCESSOR_ZIP.stat().st_size
+          successor_files = sorted([p for p in successor_root.rglob("*") if p.is_file()])
+
+          report = {
+              "test": "Use Project Scaffold alpha.1 to build the next Scaffold pack",
+              "date": "2026-07-31",
+              "status": "completed",
+              "verdict": verdict,
+              "source": {
+                  "version": SOURCE_VERSION,
+                  "filename": ORIGINAL_ZIP.name,
+                  "expected_size": EXPECTED_SIZE,
+                  "actual_size": actual_size,
+                  "expected_sha256": EXPECTED_SHA256,
+                  "actual_sha256": actual_sha,
+                  "verified": actual_size == EXPECTED_SIZE and actual_sha == EXPECTED_SHA256,
+                  "file_count": len(source_files),
+                  "directory_count": len(source_dirs),
+                  "top_level_entries": top_level,
+                  "original_scripts": original_scripts,
+                  "version_reference_files": version_occurrences,
+                  "placeholder_markers": placeholder_markers,
+                  "has_machine_readable_manifest": has_machine_manifest,
+                  "has_example_project": has_example_project,
+                  "has_explicit_self_build_instruction": has_build_instruction,
+              },
+              "successor": {
+                  "version": TARGET_VERSION,
+                  "filename": SUCCESSOR_ZIP.name,
+                  "size": successor_size,
+                  "sha256": successor_sha,
+                  "file_count": len(successor_files),
+                  "version_updated_files": changed_version_files,
+                  "added_builder": "SOURCES/BUILD-NEXT-SCAFFOLD.py",
+                  "added_identity": "PACK-IDENTITY.txt",
+                  "added_checksum_manifest": "MANIFEST-SHA256.txt",
+              },
+              "major_changes_needed": major_changes,
+          }
+          (OUT / "SCAFFOLD-SELF-TEST-REPORT.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+
+          lines = [
+              "ARCHIVO 21 PROJECT SCAFFOLD SELF-HOSTING PROOF",
+              "",
+              verdict,
+              "",
+              f"SOURCE: {ORIGINAL_ZIP.name}",
+              f"SOURCE SIZE: {actual_size}",
+              f"SOURCE SHA-256: {actual_sha}",
+              f"SOURCE FILES: {len(source_files)}",
+              f"SUCCESSOR: {SUCCESSOR_ZIP.name}",
+              f"SUCCESSOR SIZE: {successor_size}",
+              f"SUCCESSOR SHA-256: {successor_sha}",
+              f"SUCCESSOR FILES: {len(successor_files)}",
+              "",
+              "MAJOR CHANGES NEEDED",
+          ]
+          for item in major_changes:
+              lines.extend([f"{item['id']} — {item['title']}", f"Evidence: {item['evidence']}", f"Required: {item['required_change']}", ""])
+          (OUT / "SCAFFOLD-SELF-TEST-REPORT.txt").write_text("\r\n".join(lines) + "\r\n", encoding="ascii", errors="replace")
+          shutil.copy2(OUT / "SCAFFOLD-SELF-TEST-REPORT.txt", successor_root / "OUTPUTS" / "SELF-TEST-BUILD-REPORT.txt")
+
+          # Rebuild once more so the final ZIP includes the final text report.
+          (successor_root / "MANIFEST-SHA256.txt").unlink()
+          pre_manifest_files = sorted([p for p in successor_root.rglob("*") if p.is_file()], key=lambda p: p.as_posix().lower())
+          manifest_lines = [f"{sha256_file(path)}  {path.relative_to(successor_root).as_posix()}" for path in pre_manifest_files]
+          (successor_root / "MANIFEST-SHA256.txt").write_text("\n".join(manifest_lines) + "\n", encoding="ascii", newline="\r\n")
+          deterministic_zip(successor_root, SUCCESSOR_ZIP)
+
+          final_sha = sha256_file(SUCCESSOR_ZIP)
+          final_size = SUCCESSOR_ZIP.stat().st_size
+          report["successor"]["size"] = final_size
+          report["successor"]["sha256"] = final_sha
+          report["successor"]["file_count"] = len([p for p in successor_root.rglob("*") if p.is_file()])
+          (OUT / "SCAFFOLD-SELF-TEST-REPORT.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+          print(json.dumps(report, indent=2))
+          PY
+          python /tmp/scaffold_self_test.py
+
+      - name: Upload proof package
+        uses: actions/upload-artifact@v4
+        with:
+          name: scaffold-self-hosting-proof-20260731
+          path: scaffold-self-test-output/
+          if-no-files-found: error
+          retention-days: 30
