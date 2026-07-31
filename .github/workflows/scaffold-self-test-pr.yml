@@ -1,0 +1,48 @@
+name: Scaffold self-hosting proof (PR observer)
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-next-scaffold:
+    if: github.head_ref == 'proof/scaffold-self-test-20260731'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out proof branch
+        uses: actions/checkout@v4
+
+      - name: Extract and run the isolated proof builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          workflow = Path('.github/workflows/scaffold-self-test-poc.yml').read_text(encoding='utf-8').splitlines()
+          output = []
+          active = False
+          for line in workflow:
+              if "cat > /tmp/scaffold_self_test.py <<'PY'" in line:
+                  active = True
+                  continue
+              if active and line == '          PY':
+                  break
+              if active:
+                  output.append(line[10:] if line.startswith('          ') else line)
+          if not output:
+              raise SystemExit('Embedded proof builder was not found')
+          Path('/tmp/scaffold_self_test.py').write_text('\n'.join(output) + '\n', encoding='utf-8')
+          PY
+          python /tmp/scaffold_self_test.py
+
+      - name: Upload proof package
+        uses: actions/upload-artifact@v4
+        with:
+          name: scaffold-self-hosting-proof-20260731
+          path: scaffold-self-test-output/
+          if-no-files-found: error
+          retention-days: 30
